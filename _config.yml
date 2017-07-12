@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "(Un)Synced"
+title                    : "ZowieHi"
 title_separator          : "|"
 name                     : "zowiehi"
-description              : "My journey to become a better developer"
+description              : "Projects and Thoughts"
 url                      : "https://zowiehi.github.io"
 baseurl                  :
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -81,7 +81,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Developer and Aspiring Human Being"
   location         : "Flagstaff, AZ"
-  email            :
+  email            : zhaugaard@gmail.com
   uri              :
   bitbucket        :
   codepen          :
@@ -89,7 +89,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : zowiehi
   google_plus      :
   keybase          :
   instagram        :
@@ -230,9 +230,20 @@ compress_html:
   ignore:
     envs: development
 
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
 
 # Defaults
 defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
   # _posts
   - scope:
       path: ""
@@ -244,3 +255,11 @@ defaults:
       comments: # true
       share: true
       related: true
+  # _portfolio 
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
